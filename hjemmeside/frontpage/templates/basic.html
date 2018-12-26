@@ -1,0 +1,62 @@
+{% extends "header.html" %}
+
+{% block content %}
+<div class="container-fluid" style="min-height:95%; ">
+    <div class="row">
+        <div class="col-sm-2">
+            <br>
+
+            <center>
+                <img src="http://127.0.0.1/media/clean.png" style="height:70px" hr>
+            </center>
+        </div>
+        <div class="col-sm-10">
+
+            <center>
+                <br>
+                <h2>Skolevask</h2>
+                <p style="font-size: 0.7rem">lavet af Johan Uhrskov-Bendixsen</p>
+
+            </center>
+
+        </div>
+    </div>
+    <hr style="margin:0px">
+
+        <div class="row">
+        <div class="col-sm" style="margin-bottom:0px">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-#ffffff">
+                <a class="navbar-brand" href="{% url 'forside' %}">Forside</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-item nav-link" href="{% url 'Sønderhus vask 1' %}">Sønderhus vask 1</a>
+                        <a class="nav-item nav-link" href="{% url 'Sønderhus vask 2' %}">Sønderhus vask 2</a>
+                        <a class="nav-item nav-link" href="{% url 'Sønderhus vask 3' %}">Sønderhus vask 3</a>
+                        <a class="nav-item nav-link" href="{% url 'Damgårdens vask' %}">Damgårdens vask</a>
+                        <a class="nav-item nav-link" href="{% url 'Reserver tid' %}">Reserver tid</a>
+                        <a class="nav-item nav-link" href="{% url 'Slet tid' %}">Slet tid</a>
+                        <a class="nav-item nav-link" href="{% url 'logind' %}">Logind</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        </div>
+	<hr style="margin:0px">
+	<div class="container-fluid" style="min-height:95%;padding:0px ">
+	    <h4 style="margin-bottom:15px;margin-top:25px">{{ navn }}</h4>
+            {% block nextcontent %}
+            {% endblock nextcontent %}
+        </div>
+</div>
+
+</div>
+
+<footer>
+    <div class="container-fluid" style='margin-left:15px'>
+    </div>
+</footer>
+{% endblock %}

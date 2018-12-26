@@ -7,7 +7,16 @@ Så naturlig vis lavede jeg en lille hjemmeside til skolen bare for lige at prø
 
 Jeg er eleve på Ryslinge efterskole ;)
 
-held og lukke med at få dette til at virke på din skole  
+<a href="url"><img src="https://github.com/johanub/schoolWash/blob/master/phone.PNG" align="left" width="300" ></a>
 
-BTW: jeg har ikke sat et eneste komma og jeg er lort til at stave. Derfor er mit næste project noget sejt
+`
+
+`
+
+`
+
+
+<-----Sådan ser den ud på mobilen. Pænt cool ikke?
+
+ 
 

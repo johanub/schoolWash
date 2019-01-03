@@ -19,7 +19,7 @@ def userwashes(user):
         qwery = models.Tables.objects.filter(usr=user)
     for i in qwery:
         temp = []
-        whyslet = i.starttid + '-' + i.sluttid + '-' + i.maskine + '-' + str(user)
+        whyslet = i.starttid + '-' + i.sluttid + '-' + i.maskine
         temp.append(whyslet)
         temp.append(whyslet)
         thechois.append(tuple(temp))

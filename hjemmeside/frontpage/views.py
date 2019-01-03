@@ -4,10 +4,7 @@ from django.contrib.auth.decorators import login_required
 from . import forms
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login
-
-tidsfaver = {}
-for maskine in maskiner:
-    tidsfaver.update({maskine[0]: []})
+from ..schoolWash.settings import tidsfaver
 
 
 def nyvask(request):
@@ -50,11 +47,11 @@ def reservertid(request):
             instance.usr = request.user
             instance.columnlen = valid[1]
             if not fave:
-                fave.extend(('#fff6a1',
+                fave.extend(['#fff6a1',
                              '#fbbaaa',
                              '#eec8f9',
                              '#a1e0f2',
-                             '#bbecb6'))
+                             '#bbecb6'])
 
             instance.color = fave.pop()
             instance.save()
@@ -91,8 +88,7 @@ def slettid(request):
             Taken.objects.filter(time=i, maskine=maskine).delete()
         Tables.objects.filter(starttid=starttid, sluttid=sluttid, maskine=maskine).delete()
         m = maskine
-        b = "".join([c for c in m if c != " "])
-        return redirect(b.lower())
+        return redirect(m)
     return render(request, 'washsite/form.html', {'form': form, 'virkede': '', 'navn': 'Slet tid'})
 
 

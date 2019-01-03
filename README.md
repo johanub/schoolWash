@@ -1,5 +1,4 @@
 # schoolWash 
-Made by a danish 16 year-old only after 11 at night in one month (also had to teatch myself django from skrach)
 
 Hjemmeside hvor du kan bestille tider til vaskemaskiner.
 

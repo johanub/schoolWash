@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from . import forms
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login
-from ..schoolWash.settings import tidsfaver
+from random import choice
 
 
 def nyvask(request):
@@ -42,18 +42,16 @@ def reservertid(request):
 
         if valid[0]:
             # Hvis det virede
-            fave = tidsfaver[str(currentmaskine)]
+            fave = choice(['#fff6a1',
+                           '#fbbaaa',
+                           '#eec8f9',
+                           '#a1e0f2',
+                           '#bbecb6'])
+
             instance = form.save(commit=False)
             instance.usr = request.user
             instance.columnlen = valid[1]
-            if not fave:
-                fave.extend(['#fff6a1',
-                             '#fbbaaa',
-                             '#eec8f9',
-                             '#a1e0f2',
-                             '#bbecb6'])
-
-            instance.color = fave.pop()
+            instance.color = fave
             instance.save()
 
             return redirect(currentmaskine)

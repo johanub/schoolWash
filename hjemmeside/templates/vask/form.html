@@ -1,0 +1,21 @@
+{% extends "vask/basic.html" %}
+
+{% block nextcontent %}
+
+
+    <div style="margin-top:-25px" class="row">
+    <form style="margin:10px" action="{% url navn %}" method="post">
+        <p>{{ virkede }}</p>
+        {% csrf_token %}
+        {% for field in form %}
+        <div style="margin:10px;padding-bottom:5px" class="form-control">
+            {{ field.errors }}
+            <label >{{ field.label_tag }}</label>
+            {{ field }}
+        </div>
+        {% endfor %}
+        <input style="margin-left:15px" type="submit" value="{{ navn }}">
+    </form>
+    </div>
+
+{% endblock nextcontent %}

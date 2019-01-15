@@ -2,7 +2,7 @@ from django.urls import path, include
 from . import views
 
 urlpatterns = [
-    path('', views.logind_view, name='logind'),
+    path('', views.social, name='social'),
+    path('upload/', views.upload, name='upload'),
 ]
-#todo get clean.png on site
 

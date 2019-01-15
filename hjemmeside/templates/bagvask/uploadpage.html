@@ -1,12 +1,12 @@
-{% extends "basic.html" %}
+{% extends "bagvask/basic.html" %}
 
 {% block nextcontent %}
 
-<h1>{{ navn }}</h1>
 <form class="site-form" action="{% url navn %}" method="post">
-    <p>{{ virkede }}</p>
+    <div class="form-group">
     {% csrf_token %}
     {{ form }}
+    </div>
     <input type="submit" value="{{ navn }}">
 </form>
 

@@ -6,9 +6,9 @@ class Reservertid(forms.ModelForm):
     class Meta:
         model = models.Tables
         fields = ['maskine', 'starttid', 'sluttid']
-        labels = {'maskine': 'Maskine\n',
-                  'starttid': 'Start tidspunkt\n',
-                  'sluttid': 'Slut tidspunkt\n'}
+        labels = {'maskine': 'Maskine',
+                  'starttid': 'Start tidspunkt',
+                  'sluttid': 'Slut tidspunkt'}
 
 
 def userwashes(user):

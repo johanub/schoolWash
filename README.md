@@ -1,6 +1,7 @@
 # schoolWash 
 
 Hjemmeside hvor du kan bestille tider til vaskemaskiner.
+Lavet på to uger om aftenen efter kl 22
 
 Jeg er elev på Ryslinge efterskole ;)
 

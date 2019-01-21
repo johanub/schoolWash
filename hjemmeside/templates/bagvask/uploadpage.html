@@ -2,7 +2,7 @@
 
 {% block nextcontent %}
 
-<form class="site-form" action="{% url navn %}" method="post">
+<form class="site-form" action="{% url 'upload' %}" method="post">
     <div class="form-group">
     {% csrf_token %}
     {{ form }}

@@ -5,20 +5,20 @@ from . import forms
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login
 
-faver = ['#fff6a1',
-         '#fbbaaa',
-         '#eec8f9',
-         '#a1e0f2',
-         '#bbecb6',
-         '#fff6a1',
-         '#fbbaaa',
-         '#eec8f9',
-         '#a1e0f2',
-         '#bbecb6',
-         '#fff6a1',
-         '#fbbaaa',
-         '#eec8f9',
-         '#fff6a1']
+faver = ['#9edae5',
+         '#dbdb8d',
+         '#c7c7c7',
+         '#f7b6d2',
+         '#c49c94',
+         '#c5b0d5',
+         '#ff9896',
+         '#98df8a',
+         '#ffbb78',
+         '#aec7e8',
+         '#9edae5',
+         '#dbdb8d',
+         '#c7c7c7']
+
 favedict = {}
 for index, i in zip(lsttimetable, faver):
     favedict[index] = i

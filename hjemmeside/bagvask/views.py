@@ -16,6 +16,5 @@ def upload(request):
         if form.is_valid():
             instance = form.save(commit=False)
             instance.usr = request['usr']
-            print('ok')
             instance.save()
     return render(request, 'bagvask/uploadpage.html', dic)

@@ -32,7 +32,7 @@ ALLOWED_HOSTS = ['10.2.20.188', '127.0.0.1']
 
 INSTALLED_APPS = [
     'bagvask',
-    'frontpage',
+    'vaskeside',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

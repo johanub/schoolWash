@@ -9,20 +9,19 @@ for i in range(8, 22):
     temp = []
     time = str(i) + ':00'
     lsttimetable.append(time)
-    temp.append(time)
-    temp.append(time)
-    timetable.append(tuple(temp))
+    timetable.append(tuple([time, time]))
 
 
-def converttime(rmtimes):
+# konverterer fra f.eks [8:00, 10:00] til [8:00, 9:00, 10:00]
+def converttime(pendingtime):
     temp = False
     takentime = []
     for time in lsttimetable:
-        if time == rmtimes[0]:
+        if time == pendingtime[0]:
             takentime.append(time)
             temp = True
             continue
-        elif time == rmtimes[1]:
+        elif time == pendingtime[1]:
             takentime.append(time)
             break
         elif temp:
@@ -30,34 +29,35 @@ def converttime(rmtimes):
     return takentime
 
 
-def converttimespace(takentime):
+# konverterer fra [8:00, 10:00] til [8:00-9:00, 9:00-10:00]
+def converttimespace(pendingtime):
+    pendingtime = converttime(pendingtime)
     space = []
-    for integer in range(len(takentime)):
+    for integer in range(len(pendingtime)):
         try:
-            space.append(takentime[integer] + '-' + takentime[integer+1])
+            space.append(pendingtime[integer] + '-' + pendingtime[integer + 1])
         except Exception:
             break
     return space
 
 
-def notavtime(rmtimes, maskine):
-    starttid, sluttid = rmtimes[0].split(':')[0], rmtimes[len(rmtimes)-1].split(':')[0]
+def notavtime(pendingtime, maskine):
+    starttid, sluttid = pendingtime[0].split(':')[0], pendingtime[len(pendingtime) - 1].split(':')[0]
     if int(starttid) >= int(sluttid):
-        return False, ''
-    takentime = converttime(rmtimes)
-    notav = Taken.objects.filter(maskine=maskine)
-    colunmlen = (len(takentime) - 1) * 60
-    takentime = converttimespace(takentime)
-    for f in takentime:
-        for i in notav:
-            if i.time == f:
+        return False, None
+    pendingspace = converttimespace(pendingtime)
+    notav = Tables.objects.filter(maskine=maskine)
+    takens = [[i.starttid, i.sluttid] for i in notav]
+    takenspace = list(map(lambda lst: converttimespace(lst), takens))
+    for i in pendingspace:
+        for j in takenspace:
+            if i in j:
                 return False, None
 
-    if len(takentime) > 3:
+    if len(pendingspace) > 3:
         return False, None
-    for i in takentime:
-        Taken(time=i, maskine=maskine).save()
-    return True, colunmlen
+
+    return True, len(pendingspace) * 60
 
 
 maskiner = (('Sønderhus vask 3', 'Sønderhus vask 3'),
@@ -76,13 +76,3 @@ class Tables(models.Model):
 
     def __str__(self):
             return self.maskine
-
-
-class Taken(models.Model):
-    time = models.CharField(max_length=255)
-    maskine = models.CharField(max_length=255, choices=maskiner, default='Sønderhus vask 1')
-
-    def __str__(self):
-        return self.time
-
-

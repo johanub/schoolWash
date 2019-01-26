@@ -11,4 +11,4 @@ urlpatterns = [
 
 for maskine in maskiner:
     alias = maskine[0].lower().replace(' ', '-')
-    urlpatterns.append(path(alias +'/', views.nyvask, name=maskine[0]))
+    urlpatterns.append(path(alias + '/', views.nyvask, name=maskine[0]))

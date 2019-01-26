@@ -6,8 +6,7 @@ db = connect('{}/db.sqlite3'.format(os.getcwd()))
 curser = db.cursor()
 
 def clear():
-	curser.execute("delete from frontpage_taken")
-	curser.execute("delete from frontpage_tables")
+	curser.execute("delete from vaskeside_tables")
 	db.commit()
 
 clear()

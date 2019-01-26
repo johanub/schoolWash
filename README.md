@@ -9,4 +9,5 @@ Hjemmeside hvor du kan bestille tider til vaskemaskiner.
 <-----Sådan ser den ud på mobilen. Pænt cool ikke?
 
 <h2>Noter</h2>
-Ville gerne have brugt Flask men ville gerne prøve Djangos måde at integrere brugere på
+Vi ville gerne have brugt Flask, men vi ville gerne prøve Djangos måde at integrere brugere på.
+Vi fik ikke rigitgt kommenteret koden ordenligt, eftersom det kun var et projekt over en kort periode.

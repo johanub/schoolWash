@@ -31,7 +31,6 @@ ALLOWED_HOSTS = ['10.2.20.188', '127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
-    'bagvask',
     'vaskeside',
     'django.contrib.admin',
     'django.contrib.auth',

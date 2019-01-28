@@ -93,10 +93,6 @@ def slettid(request):
                                                     'navn': 'Slet tid'})
         view = request.POST['slet_tid'].split('-')
         starttid, sluttid, maskine = view
-        tider = [starttid, sluttid]
-        rmtimes = converttimespace(converttime(tider))
-        for i in rmtimes:
-            Taken.objects.filter(time=i, maskine=maskine).delete()
         Tables.objects.filter(starttid=starttid, sluttid=sluttid, maskine=maskine).delete()
         m = maskine
         return redirect(m)

@@ -7,6 +7,7 @@ urlpatterns = [
     path('logind/', views.logind_view, name='logind'),
     path('reservertid/', views.reservertid, name='Reserver tid'),
     path('slettid/', views.slettid, name='Slet tid'),
+    path('coolshit/', views.coolshit, name='coolshit')
 ]
 
 for maskine in maskiner:

@@ -110,3 +110,7 @@ def logind_view(request):
         form = AuthenticationForm()
         form.error_messages['invalid_login'] = 'prøv igen... måske skrev du forkert'
     return render(request, 'vask/logind.html', {'form': form, 'navn': 'Logind'})
+
+
+def coolshit(request):
+    return render(request, 'vask/coolshit.html')

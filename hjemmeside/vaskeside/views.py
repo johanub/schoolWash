@@ -35,7 +35,7 @@ def nyvask(request):
 
 
 def frontpage(request):
-    return render(request, 'vask/frontpage.html')
+    return redirect('Sønderhus vask 1')
 
 
 @login_required(login_url='logind')

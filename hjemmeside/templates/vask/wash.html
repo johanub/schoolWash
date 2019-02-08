@@ -1,7 +1,7 @@
 {% extends "vask/basic.html" %}
 
 {% block nextcontent %}
-
+<figure class="highlight">
 {% for urtid in tabel %}
 
 
@@ -15,9 +15,8 @@
                 {% ifequal tid.maskine navn %}
                     {% if tid.starttid == urtid %}
                         <div class="col-sm-6" style="background-color:{{ tid.color }};padding: 0px; height: {{ tid.columnlen }}px !important;margin-left: 120px !important;margin-right:50px">
-
-                                    <h5 style="padding-left: 8px !important;padding-top:8px !important;margin:0px"> {{ tid.usr }} </h5>
-                                    <p style="padding-left: 8px !important;">{{ tid.starttid }} - {{ tid.sluttid }}</p>
+                            <h5 style="padding-left: 8px !important;padding-top:8px !important;margin:0px"> {{ tid.usr }} </h5>
+                            <p style="padding-left: 8px !important;">{{ tid.starttid }} - {{ tid.sluttid }}</p>
                         </div>
                     {% endif %}
                 {% endifequal %}
@@ -26,6 +25,6 @@
     </div>
 
 {% endfor %}
-
+</figure>
 
 {% endblock nextcontent %}

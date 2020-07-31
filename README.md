@@ -11,3 +11,7 @@ Hjemmeside hvor du kan bestille tider til vaskemaskiner.
 <h2>Noter</h2>
 Vi ville gerne have brugt Flask, men vi ville gerne prøve Djangos måde at integrere brugere på.
 Vi fik ikke rigitgt kommenteret koden ordenligt, eftersom det kun var et projekt over en kort periode.
+
+
+Brugte en raspberry pi med nginx og wsgi til at hoste den på min efterskoles lokale netværk. 
+
